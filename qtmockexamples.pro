@@ -1,9 +1,14 @@
-QT -= gui
-CONFIG += c++17
+QT += testlib
+CONFIG += qt console warn_on depend_includepath testcase c++17
+
+TEMPLATE = app
 
 SOURCES += \
-        main.cpp
+    tst_example.cpp
 
 HEADERS += \
     mockdevice.h \
-    controller.h
+    controller.h \
+    app.h
+
+INCLUDEPATH += $$PWD/../qtmockexamples

@@ -2,7 +2,6 @@
 #define MOCKDEVICE_H
 
 #include <QIODevice>
-#include <QDebug>
 
 class MockDevice : public QIODevice {
     Q_OBJECT
@@ -19,7 +18,6 @@ protected:
     }
 
     virtual qint64 writeData(const char *data, qint64 len) override {
-        qDebug() << "Writing: " << QString(data);
         m_data.append(data, static_cast<int>(len));
         return len;
     }
